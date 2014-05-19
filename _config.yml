@@ -1,0 +1,10 @@
+# Site settings
+title: "Johnny Duvert"
+email: info@johnnyduvert.se
+description: "I'm a awesome guy!"
+baseurl: ""
+url: "http://www.johnnyduvert.se"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
