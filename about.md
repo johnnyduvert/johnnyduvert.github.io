@@ -1,21 +1,61 @@
 ---
 layout: page
-title: About Me
-permalink: /about/
-nav_order: 5
+title: Om mig
+permalink: /johnny/
+nav_order: 10
 ---
 
-Henrik Åberg blev känd för den stora publiken över en natt när han 1995 vann finalen av TV4s program Sikta Mot Stjärnorna där han framförde Elvis Presley´s låt ”Blue Hawaii”. I europafinalen av Sikta Mot Stjärnorna som sändes från Amsterdam 1996 framförde han Elvis låten ”Love Me Tender”.
+Förutom familjen och som fotbollstränare till halva kommunens barn så jobbar jag 100% som artist och låtskrivare sedan 6 år tillbaka. 
+Tidigare så var jag (Key Account Manager) = säljare på ett mjukvaruföretag i 17 år och spelade, uppträdde och sjöng vid sidan om detta fulltidsjobb som en hobby dock ca: 60-100 spelningar per år men vartefter åren gick så blev jag en mer etablerad artist på scenerna och kände att jag faktiskt kunde livnära mig på det ”roligaste” som finns...sång och musik...:) 
 
-1996 medverkade Henrik Åberg i Melodifestivalen med en låt skriven av
-Lasse Berghagen och Lasse Holm, "Du är alltid en del utav mig" som blev en hit och långliggare på Svensktoppen i 38 veckor! Albumet "Du Är Alltid En Del Utav Mej" sålde guld samma år och innehöll ytterligare en hit på Svensktoppen, ”Bara En Clown”.
+Jag har varit med om en hel del kul grejer under min livstid, började som 7-åring att spela gitarr och sjunga i källaren hos mamma och pappa och har alltid varit med i olika skolkörer och även Katarina Gosskör, när jag blev äldre så var jag med som gitarrist i olika band från punk, Reggae till gammal hederlig rock´n roll och var även förband till Ebba Grön och Dag Vag på Rågsvedsgården en gång i tiden.
 
-Efter framgångarna genomförde Henrik Åberg en fyra månaders lång sommarturné och därefter succéföreställningen ”Elvis På Tyrol” i Stockholm under hösten och vintern 1996.
+Därefter så var jag med i olika tv-program såsom man o man, sikta mot stjärnorna första året det gick (mitt stora genombrott 1994 = 20-års jubileum i år) där jag lyckades vinna min final och tolkningen som Roy Orbison och detta genererade en massa fantastiskt roliga Uppträdanden/framträdanden med en hel del olika arrangemang från Sweden Hockeygames, de flesta båtarna såsom Viking Line, Silja, Birka etc., och som gästartist hos Robert Wells i globen och även enskilda uppträdanden tillsammans på samma scen som Carola, Sanna N, Nick Borgen, Lili och Susie, Markoolio, Jan Johansen, Kikki Danielsson, Sofia Källgren, Lotta Engberg,Charlotte P, Style m.m.
 
-Albumet ”Hemma Igen” släpptes av Sony 1997 och generade ytterligare tre hits på Svensktoppen under 1997 och 1998 ”Jenny Och Jag”, ”Vi Skall Aldrig Ta Farväl” och ”Hemma Igen”. Det kritikerrosade albumet ”Allt Jag Har” släpptes 2003 och dessförinnan hamnade Henrik Åberg åter igen på Svensktoppen med låten ”En Dans I Morgonsolen” vilket var en duett tillsammans med Henrik Åberg och bandet Martinez.
+Jag har även fått äran att sjunga utomlands tillsammans med bl.a Richard Marx på Marriot Hotel i Orlando, Wanda Jackson, Bonnie Tyler och framförallt James Brown även det i Orlando ”House of Blues” i slutet av 90-talet.
 
-Under 2008 ,2009 och 2011 genomfördes konserthus turnén ”Elvis Forever – A Tribute To The King” där Henrik Åberg delade scen med Jack Baymoore, de backades upp av Swe TCB Band & Swe TCB Choir. Succén ”Elvis Forever” filmades på Cirkus i Stockholm och släpptes av Warner Home Video på DVD. 2011 släpptes dubbel CD albumet "Elvis Forever - A Tribute To The King - From Memphis To Las Vegas - Live In Consert. Albumet släpptes av Darrow Music och Naxos Sweden AB.
 
-Henrik Åberg turnérar regelbundet och har medverkat i en rad olika radio- och TV-program både i Sverige och utomlands genom åren. Dessutom ingår han i olika artist konstellationer.
+## Musiken
 
-Under hösten 2012 kommer Henrik Åberg i rollen som "Elvis Presley" tillsammans med TV kollegorna från TV4s program Sikta Mot Stjärnorna Jerry Carlson "Jerry Lee Lewis" och Johnny Duvert "Roy Orbison", att samlas på scenen inför 10 års jubileet av tribute showen "The Legends". Dom backas upp av "The Legends Band".
+När det gäller musiken så har jag hjärta för den gamla goda rock´n rollen men är nog en allätare. Jag har haft olika typer av shower och den kanske de största framträdanden var som Johnny Dee and The Kingstones (partylåtar)som spelades i bl.a Ryssland och Kina där turnerandet pågick under en tid i slutet av 90-talet och i början av 2000-talet.
+
+Andra roliga shower som jag också har producerat och gjort var förutom minneshowen till Orbison som gick för fulla konserthus även en Blues Brothers show som blev mycket populär.
+Jag har även gjort en hel del lokala framträdanden i tv som Roy Orbison och även lyckats få huvudrollen i vissa reklamfilmer bl.a. till Fujitsu siemens, FOI (Försvaret), biroller till Stieg Larssons filmer, Helenius hörna m.m som sändes i olika kanaler i sverige samt en del länder i europa. 
+
+Jag är både en balladsångare och en rockkille och tycker nog att en blandning med en glittrande fartig rockshow där man ger järnet på scenen ibland kombinerat med en lugn nostalgisk Orbison konsert är fantastiskt utvecklande och roligt för mig som artist, med en stor bredd så blir det aldrig vardagligt och tråkigt efter mina ca: 2000 framträdanden ;)
+
+När det gäller ballad Johnny så är jag ute och turnerar en hel del med olika saker, jag har varit med i Hans Edlers galor i globen ett antal gånger och uppträtt tillsammans med Burken, RockRagge, rockolga, Svenne och Lotta m.fl. och naturligtvis med The Legends.
+
+Jag har även blivit inbjuden som gästartist till olika stora kända dansband såsom Shanes, Candela, Ingemar Nordströms etc. och så har jag som jag skrev en minnesshow till Roy Orbison i de stora konserthusen runt om i Sverige med gästartister som bl.a Ted Åström(Johnny Cash), Cecilia Karlsson (Dolly Parton) m.flera.
+
+Jag samarbetar mycket med en fantastisk producent sedan många år tillbaka som heter Martin Klaman och som har arrat och producerat många av mina nya låtar, där de flesta av låtarna är skrivna av min kära vän och låtskrivare Jan-Eric Karlzon (Margareta) även Danne Attlerud (den gode gotlänningen) har skrivit många av mina roliga partylåtar.
+Jag är nog en riktig linslus med världens energi som bara älskar att uppträda och göra människor glada från scenen och det är väl min positiva Gen att jag inte ger mig förrän de flesta i publiken är engagerade hänger med och mår bra.
+
+Jag jobbar numera främst som artist, låtskrivare och textförfattare  och har samlat på mig en hel del nytt materiel. 
+I mina senaste projekt så har jag, och håller på att spela in nya låtar skrivna av Jan-Eric Karlzon där det klingar mycket från den gamla goda tiden fast med ett nytt fantastiskt sound, ett annat projekt är med Dogge Doggelito och Primo där första låten redan är klar, det kommer att bli en ny genre :) min 50-60tals tolkning tillsammans med Dogges Rap kommer förhoppningsvis att bli ett roligt inslag i musikbranchen framöver.
+
+
+
+## Hur uppstod The Legends?
+
+Jag hade fixat en spelning åt mig själv och Jerry Carlson (Jerry Lee Lewis) på Grand Hotell i Stockholm 1997 där Jag och Jerry satt och spånade om vi inte skulle sätta ihop ett nytt koncept med Roy Orbison, Jerry Lee Lewis och en Elviskille, båda tyckte att det var en bra ide men det dröjde ända tills 2001 innan den första konserten var på plats och då även med Henrik Åberg som tillfrågades och som tackade ja till Elvisrollen.
+
+The Legends skulle vi köra i 1-2 år tänkte vi men responsen och publiken blev så enorm med fullsatta konserthus och folkparker vart vi än kom så vi körde vidare och är nu uppe på det 13:e året tillsammans och vi har mer än fullt upp även idag och det tyder ju bara på att denna musik är tidlös och kommer aldrig att dö :) 
+
+Jag ser fram emot den stora nya konserthusturnen i höst med mina kollegor Henrik Åberg och Jerry Carlson och "The Legends" med start i början av Oktober och även den inplanerade julshowen, det känns som att vi har många år kvar och vi ska göra allt vi kan för att se till att den fina musiken överlever. 
+
+## Tack till er alla
+
+Mitt stora mål i livet har alltid varit att leva sunt och att må bra och även se till att mina medmänniskor mår bra, och finns det ett bättre sätt än att göra detta genom musiken och en positiv attityd mot andra människor!!!
+Tror inte det ;)
+
+Ännu en gång så får jag tacka er därute för den fina responsen under åren…utan er är jag ingenting.
+
+Stora kramar från
+Johnny Duvert
+
+
+## Färdigheter
+
+Sångare/artist, scenvana, säljare, sportig, golfare, fotbollsspelare, minglare, målinriktad, social, ödmjuk, barnvänlig, lekpappa, seriös, ärlig....;)
+

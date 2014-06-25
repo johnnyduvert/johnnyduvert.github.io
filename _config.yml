@@ -1,10 +1,13 @@
 # Site settings
 title: "Johnny Duvert"
 email: info@johnnyduvert.se
-description: "I'm a awesome guy!"
+description: Sedan hans succé som vinnare i Sikta Mot Stjärnorna har han gjort över 1900 framträdanden som The Big O. Johnny har medverkat i en mängd TV - och radio program och bär på en av de unikaste och sannolikt mest äkta Roy Orbison-röster
 baseurl: ""
 url: "http://www.johnnyduvert.se"
 
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+
+ 
