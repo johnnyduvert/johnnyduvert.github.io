@@ -10,7 +10,6 @@ nav_order: 5
 
 #### 4 jan - 9 feb Amorella (Orbisonshow + Rockshow, 37 dagar i sträck 74 shower)
 
-
 #### 24 maj Sundsvall
 
 #### 6 juni Offerdal
@@ -19,10 +18,9 @@ nav_order: 5
 
 #### 17 juli Dals Ed
 
-#### 4 okt – Hallstaberget 
+#### 4 okt Hallstaberget 
 
-
-#### 16 okt – Nyköping  
+#### 16 okt Nyköping  
 
 #### 17 okt Falun 
 
@@ -50,10 +48,10 @@ nav_order: 5
 
 #### 15 nov Kalmar
 
-#### 5 dec julshow
+#### 5 dec Julshow
 
-#### 6 dec julshow
+#### 6 dec Julshow
 
-#### 12 dec julshow
+#### 12 dec Julshow
 
-#### 13 dec julshow  
+#### 13 dec Julshow  

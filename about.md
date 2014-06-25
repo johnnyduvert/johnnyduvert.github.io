@@ -10,7 +10,7 @@ Tidigare så var jag (Key Account Manager) = säljare på ett mjukvaruföretag i
 
 Jag har varit med om en hel del kul grejer under min livstid, började som 7-åring att spela gitarr och sjunga i källaren hos mamma och pappa och har alltid varit med i olika skolkörer och även Katarina Gosskör, när jag blev äldre så var jag med som gitarrist i olika band från punk, Reggae till gammal hederlig rock´n roll och var även förband till Ebba Grön och Dag Vag på Rågsvedsgården en gång i tiden.
 
-Därefter så var jag med i olika tv-program såsom man o man, sikta mot stjärnorna första året det gick (mitt stora genombrott 1994 = 20-års jubileum i år) där jag lyckades vinna min final och tolkningen som Roy Orbison och detta genererade en massa fantastiskt roliga Uppträdanden/framträdanden med en hel del olika arrangemang från Sweden Hockeygames, de flesta båtarna såsom Viking Line, Silja, Birka etc., och som gästartist hos Robert Wells i globen och även enskilda uppträdanden tillsammans på samma scen som Carola, Sanna N, Nick Borgen, Lili och Susie, Markoolio, Jan Johansen, Kikki Danielsson, Sofia Källgren, Lotta Engberg,Charlotte P, Style m.m.
+Därefter så var jag med i olika tv-program såsom man o man, sikta mot stjärnorna första året det gick (mitt stora genombrott 1994 = 20-års jubileum i år) där jag lyckades vinna min final och tolkningen som Roy Orbison och detta genererade en massa fantastiskt roliga Uppträdanden/framträdanden med en hel del olika arrangemang från Sweden Hockeygames, de flesta båtarna såsom Viking Line, Silja, Birka etc., och som gästartist hos Robert Wells i globen och även enskilda uppträdanden tillsammans på samma scen som Carola, Sanna N, Nick Borgen, Lili och Susie, Markoolio, Jan Johansen, Kikki Danielsson, Sofia Källgren, Lotta Engberg, Charlotte P, Style m.m.
 
 Jag har även fått äran att sjunga utomlands tillsammans med bl.a Richard Marx på Marriot Hotel i Orlando, Wanda Jackson, Bonnie Tyler och framförallt James Brown även det i Orlando ”House of Blues” i slutet av 90-talet.
 
@@ -34,15 +34,6 @@ Jag är nog en riktig linslus med världens energi som bara älskar att uppträd
 Jag jobbar numera främst som artist, låtskrivare och textförfattare  och har samlat på mig en hel del nytt materiel. 
 I mina senaste projekt så har jag, och håller på att spela in nya låtar skrivna av Jan-Eric Karlzon där det klingar mycket från den gamla goda tiden fast med ett nytt fantastiskt sound, ett annat projekt är med Dogge Doggelito och Primo där första låten redan är klar, det kommer att bli en ny genre :) min 50-60tals tolkning tillsammans med Dogges Rap kommer förhoppningsvis att bli ett roligt inslag i musikbranchen framöver.
 
-
-
-## Hur uppstod The Legends?
-
-Jag hade fixat en spelning åt mig själv och Jerry Carlson (Jerry Lee Lewis) på Grand Hotell i Stockholm 1997 där Jag och Jerry satt och spånade om vi inte skulle sätta ihop ett nytt koncept med Roy Orbison, Jerry Lee Lewis och en Elviskille, båda tyckte att det var en bra ide men det dröjde ända tills 2001 innan den första konserten var på plats och då även med Henrik Åberg som tillfrågades och som tackade ja till Elvisrollen.
-
-The Legends skulle vi köra i 1-2 år tänkte vi men responsen och publiken blev så enorm med fullsatta konserthus och folkparker vart vi än kom så vi körde vidare och är nu uppe på det 13:e året tillsammans och vi har mer än fullt upp även idag och det tyder ju bara på att denna musik är tidlös och kommer aldrig att dö :) 
-
-Jag ser fram emot den stora nya konserthusturnen i höst med mina kollegor Henrik Åberg och Jerry Carlson och "The Legends" med start i början av Oktober och även den inplanerade julshowen, det känns som att vi har många år kvar och vi ska göra allt vi kan för att se till att den fina musiken överlever. 
 
 ## Tack till er alla
 
