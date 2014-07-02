@@ -5,53 +5,52 @@ permalink: /turnedatum/
 nav_order: 5
 ---
 
-
 ## Turnédatum 2014 
 
 * __4 jan - 9 feb__ Amorella (Orbisonshow + Rockshow, 37 dagar i sträck 74 shower)
 
-#### 24 maj Sundsvall
+* __24 maj__ Sundsvall
 
-#### 6 juni Offerdal
+* __6 juni__ Offerdal
 
-#### 30 juni Dalarna
+* __30 juni__ Dalarna
 
-#### 17 juli Dals Ed
+* __17 juli__ Dals Ed
 
-#### 4 okt Hallstaberget 
+* __4 okt__ Hallstaberget 
 
-#### 16 okt Nyköping  
+* __16 okt__ Nyköping  
 
-#### 17 okt Falun 
+* __17 okt__ Falun 
 
-#### 18 okt Cassels
+* __18 okt__ Cassels
 
-#### 23 okt Bollnäs  
+* __23 okt__ Bollnäs  
 
-#### 24 okt Hudiksvall  
+* __24 okt__ Hudiksvall  
 
-#### 25 okt Västerås 
+* __25 okt__ Västerås 
 
-#### 30 okt  Sundsvall 
+* __30 okt__  Sundsvall 
 
-#### 31 okt Örebro  
+* __31 okt__ Örebro  
 
-#### 1 nov Jönköping  
+* __1 nov__ Jönköping  
 
-#### 7 nov Östersund 
+* __7 nov__ Östersund 
 
-#### 8 nov Örnsköldsvik  
+* __8 nov__ Örnsköldsvik  
 
-#### 13 nov Uppsala 
+* __13 nov__ Uppsala 
 
-#### 14 nov Uddevalla                                         
+* __14 nov__ Uddevalla                                         
 
-#### 15 nov Kalmar
+* __15 nov__ Kalmar
 
-#### 5 dec Julshow
+* __5 dec__ Julshow
 
-#### 6 dec Julshow
+* __6 dec__ Julshow
 
-#### 12 dec Julshow
+* __12 dec__ Julshow
 
-#### 13 dec Julshow  
+* __13 dec__ Julshow  
