@@ -8,7 +8,7 @@ nav_order: 5
 
 ## Turnédatum 2014 
 
-#### 4 jan - 9 feb Amorella (Orbisonshow + Rockshow, 37 dagar i sträck 74 shower)
+* __4 jan - 9 feb__ Amorella (Orbisonshow + Rockshow, 37 dagar i sträck 74 shower)
 
 #### 24 maj Sundsvall
 
