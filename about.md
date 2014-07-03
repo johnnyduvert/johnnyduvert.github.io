@@ -5,6 +5,8 @@ permalink: /johnny/
 nav_order: 10
 ---
 
+
+<div class="pull-right" style="padding: 0 0 1em 1em;"><a href="/images/johnny_duvert.jpg"><img src="/images/johnny_duvert_small.jpg" class="img-rounded" style="width: 270px;"/></a></div>
 Förutom familjen och som fotbollstränare till halva kommunens barn så jobbar jag 100% som artist och låtskrivare sedan 6 år tillbaka. 
 Tidigare så var jag (Key Account Manager) = säljare på ett mjukvaruföretag i 17 år och spelade, uppträdde och sjöng vid sidan om detta fulltidsjobb som en hobby dock ca: 60-100 spelningar per år men vartefter åren gick så blev jag en mer etablerad artist på scenerna och kände att jag faktiskt kunde livnära mig på det ”roligaste” som finns...sång och musik...:) 
 
@@ -13,6 +15,7 @@ Jag har varit med om en hel del kul grejer under min livstid, började som 7-år
 Därefter så var jag med i olika tv-program såsom man o man, sikta mot stjärnorna första året det gick (mitt stora genombrott 1994 = 20-års jubileum i år) där jag lyckades vinna min final och tolkningen som Roy Orbison och detta genererade en massa fantastiskt roliga Uppträdanden/framträdanden med en hel del olika arrangemang från Sweden Hockeygames, de flesta båtarna såsom Viking Line, Silja, Birka etc., och som gästartist hos Robert Wells i globen och även enskilda uppträdanden tillsammans på samma scen som Carola, Sanna N, Nick Borgen, Lili och Susie, Markoolio, Jan Johansen, Kikki Danielsson, Sofia Källgren, Lotta Engberg, Charlotte P, Style m.m.
 
 Jag har även fått äran att sjunga utomlands tillsammans med bl.a Richard Marx på Marriot Hotel i Orlando, Wanda Jackson, Bonnie Tyler och framförallt James Brown även det i Orlando ”House of Blues” i slutet av 90-talet.
+
 
 
 ## Musiken
@@ -25,6 +28,8 @@ Jag har även gjort en hel del lokala framträdanden i tv som Roy Orbison och ä
 Jag är både en balladsångare och en rockkille och tycker nog att en blandning med en glittrande fartig rockshow där man ger järnet på scenen ibland kombinerat med en lugn nostalgisk Orbison konsert är fantastiskt utvecklande och roligt för mig som artist, med en stor bredd så blir det aldrig vardagligt och tråkigt efter mina ca: 2000 framträdanden ;)
 
 När det gäller ballad Johnny så är jag ute och turnerar en hel del med olika saker, jag har varit med i Hans Edlers galor i globen ett antal gånger och uppträtt tillsammans med Burken, RockRagge, rockolga, Svenne och Lotta m.fl. och naturligtvis med The Legends.
+
+<div class="pull-left" style="padding: 1em 1em 1em 0;"><a href="/images/sikta_mot_stjarnorna.jpg"><img src="/images/sikta_mot_stjarnorna_small.jpg" class="img-rounded"/></a></div>
 
 Jag har även blivit inbjuden som gästartist till olika stora kända dansband såsom Shanes, Candela, Ingemar Nordströms etc. och så har jag som jag skrev en minnesshow till Roy Orbison i de stora konserthusen runt om i Sverige med gästartister som bl.a Ted Åström(Johnny Cash), Cecilia Karlsson (Dolly Parton) m.flera.
 
