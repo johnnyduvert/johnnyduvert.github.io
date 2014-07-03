@@ -19,6 +19,13 @@
 			<li ><a href="/the-legends/">The Legends</a></li>
 			<li ><a href="/musik/">Köp Musik</a></li>
 			<li ><a href="/recension/">Recensioner</a></li>
+{% comment %}
+           {% sorted_for p in site.pages sort_by:nav_order %}
+               {% if p.nav_order %}
+                       <li {% if p.url == page.url %}class="active"{% endif %}><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></li>
+               {% endif %}
+           {% endsorted_for %}
+{% endcomment %}
 	  </ul>
 	</div><!--/.nav-collapse -->
       </div>
