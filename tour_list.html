@@ -1,23 +1,20 @@
 ---
-layout: post
+layout: simple
 title:  "Spelningar"
 permalink: /turnedatum/
 nav_order: 5
 ---
-
-## Turnédatum 2014 
+<h1>Turnédatum 2014</h1>
 
 <div class="row">
   <div class="col-md-8">
 
-<ul>
+<ul class="list-group">
 {% for date in site.data.tour_dates %}
-<li>{{ date.date }} {{ date.name }}</li>
+<li class="list-group-item"><strong>{{ date.date }}</strong>, {{ date.name }}</li>
 {% endfor %}
 </ul>
 
   </div>
-  <div class="col-md-4"><a style="max-width: 30%;" href="/images/pelle/DSC_66269.jpg"><img style="width: 100%" src="/images/pelle/DSC_66269_small.jpg" class="img-rounded"/></a></div>
+  <div class="col-md-4"><a href="/images/pelle/DSC_66269.jpg"><img style="width: 100%" src="/images/pelle/DSC_66269_small.jpg" class="img-rounded"/></a></div>
 </div>
-
-
