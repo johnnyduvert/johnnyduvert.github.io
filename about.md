@@ -7,9 +7,6 @@ nav_order: 10
 
 
 <div class="pull-right" style="padding: 0 0 1em 1em;"><a href="/images/johnny_duvert.jpg"><img src="/images/johnny_duvert_small.jpg" class="img-rounded" style="width: 270px;"/></a></div>
-Förutom familjen och som fotbollstränare till halva kommunens barn så jobbar jag 100% som artist och låtskrivare sedan 6 år tillbaka. 
-Tidigare så var jag (Key Account Manager) = säljare på ett mjukvaruföretag i 17 år och spelade, uppträdde och sjöng vid sidan om detta fulltidsjobb som en hobby dock ca: 60-100 spelningar per år men vartefter åren gick så blev jag en mer etablerad artist på scenerna och kände att jag faktiskt kunde livnära mig på det ”roligaste” som finns...sång och musik...:) 
-
 Jag har varit med om en hel del kul grejer under min livstid, började som 7-åring att spela gitarr och sjunga i källaren hos mamma och pappa och har alltid varit med i olika skolkörer och även Katarina Gosskör, när jag blev äldre så var jag med som gitarrist i olika band från punk, Reggae till gammal hederlig rock´n roll och var även förband till Ebba Grön och Dag Vag på Rågsvedsgården en gång i tiden.
 
 Därefter så var jag med i olika tv-program såsom man o man, sikta mot stjärnorna första året det gick (mitt stora genombrott 1994 = 20-års jubileum i år) där jag lyckades vinna min final och tolkningen som Roy Orbison och detta genererade en massa fantastiskt roliga Uppträdanden/framträdanden med en hel del olika arrangemang från Sweden Hockeygames, de flesta båtarna såsom Viking Line, Silja, Birka etc., och som gästartist hos Robert Wells i globen och även enskilda uppträdanden tillsammans på samma scen som Carola, Sanna N, Nick Borgen, Lili och Susie, Markoolio, Jan Johansen, Kikki Danielsson, Sofia Källgren, Lotta Engberg, Charlotte P, Style m.m.
