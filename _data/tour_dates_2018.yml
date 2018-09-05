@@ -94,18 +94,18 @@
   date: 2018-09-13
 - name: "Rosella, &quot;The Living Jukebox&quot;"
   date: 2018-09-20
-- name: "Cinderella, &quot;The Living Jukebox&quot;"
-  date: 2018-09-21
-- name: "Cinderella, &quot;The Living Jukebox&quot;"
-  date: 2018-09-22
 - name: "Sollefteå, &quot;Legends&quot;"
   date: 2018-09-29
 - name: "Rosella, &quot;The Living Jukebox&quot;"
   date: 2018-10-04
-- name: "Cinderella, &quot;The Living Jukebox&quot;"
+- name: "Gabriella, &quot;The Living Jukebox&quot;"
+  date: 2018-10-11
+- name: "Gabriella, &quot;The Living Jukebox&quot;"
   date: 2018-10-12
-- name: "Cinderella, &quot;The Living Jukebox&quot;"
+- name: "Gabriella, &quot;The Living Jukebox&quot;"
   date: 2018-10-13
+- name: "Gabriella, &quot;The Living Jukebox&quot;"
+  date: 2018-10-14
 - name: "Rosella, &quot;The Living Jukebox&quot;"
   date: 2018-10-18
 - name: "Falun, &quot;Legends&quot;"
@@ -148,11 +148,65 @@
   date: 2018-11-18
 - name: "Rosella, &quot;The Living Jukebox&quot;"
   date: 2018-11-22
+- name: "Vemdalen, &quot;Legends&quot;"
+  date: 2018-11-24
 - name: "Rosella, &quot;The Living Jukebox&quot;"
   date: 2018-11-29
-- name: "Rosella, &quot;The Living Jukebox&quot;"
+- name: "Västervik, &quot;Legends&quot;"
+  date: 2018-11-30
+- name: "Västervik, &quot;Legends&quot;"
+  date: 2018-12-01
+- name: "Rosella, &quot;Roy Orbison show (30 years memory)&quot;"
   date: 2018-12-06
+- name: "?, &quot;Legends julshow&quot;"
+  date: 2018-12-07
 - name: "Rosella, &quot;The Living Jukebox&quot;"
   date: 2018-12-13
+- name: "Sundsvall, &quot;Legends julshow&quot;"
+  date: 2018-12-17
+- name: "Skellefteå, &quot;Legends julshow&quot;"
+  date: 2018-12-18
+- name: "Luleå, &quot;Legends julshow&quot;"
+  date: 2018-12-19
+- name: "Umeå, &quot;Legends julshow&quot;"
+  date: 2018-12-20
+- name: "Östersund, &quot;Legends julshow&quot;"
+  date: 2018-12-21
 - name: "Rosella, &quot;The Living Jukebox&quot;"
   date: 2018-12-20
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-02-07
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-02-14
+- name: "Melodifestivalen"
+  date: 2019-02-20
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-02-21
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-02-28
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-03-07
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-03-14
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-03-21
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-03-28
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-04-04
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-04-11
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-04-18
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-04-25
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-05-02
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-05-09
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-05-16
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-05-23
+- name: "Rosella, &quot;The Living Jukebox&quot;"
+  date: 2019-05-30
