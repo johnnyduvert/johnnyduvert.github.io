@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.7.1'
+ruby '3.4.4'
 
 gem 'github-pages'
