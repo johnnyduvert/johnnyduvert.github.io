@@ -37,7 +37,7 @@ jobs:
             *) echo "VITE_CMS_URL must be a public HTTPS URL" >&2; exit 1 ;;
           esac
           bun run build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
