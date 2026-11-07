@@ -3,6 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CMS preview bootstrap: must precede styles, images and app scripts. -->
+    <meta name="referrer" content="no-referrer" />
+    <style>html[data-cms-preview] #page-content { visibility: hidden; }</style>
+    <script>
+      if (new URL(location.href).searchParams.has('preview')) {
+        document.documentElement.dataset.cmsPreview = '';
+        let robots = document.querySelector('meta[name="robots"]');
+        if (!robots) {
+          robots = document.createElement('meta');
+          robots.name = 'robots';
+          document.head.append(robots);
+        }
+        robots.content = 'noindex,nofollow';
+      }
+    </script>
+    <!--github-pages-fallback-->
     <link rel="icon" type="image/png" href="/favicon-outlined.png" />
     <meta name="theme-color" content="#100d0e" />
     <meta name="description" content="Johnny Duvert — artist, underhållare och en av Sveriges mest uppskattade Roy Orbison-tolkare." />

@@ -1,7 +1,8 @@
 import {
+  createContext,
   Fragment,
+  useContext,
   useEffect,
-  useMemo,
   useRef,
   useState,
   useCallback,
@@ -9,10 +10,19 @@ import {
   type MouseEvent,
   type ReactNode,
 } from "react";
-import { loadSite, mediaUrl, PageNotFoundError, type FeedData, type FeedEvent, type LoadedSite } from "./cms";
+import { createPreviewContext, loadSite, mediaUrl, PageNotFoundError, type FeedData, type FeedEvent, type LoadedSite, type PreviewContext } from "./cms";
 import type { ContentBlock, MediaRecord, RichTextDocument } from "../lib/contracts";
+import { assetUrl, toBrowserPath, toSitePath } from "./paths";
+import { isPreviewTarget, startPreview, type PreviewStatus } from "./preview";
 
 type Navigate = (href: string, replace?: boolean) => void;
+
+/** True while rendering a CMS preview snapshot: unfinished content gets placeholders. */
+const PreviewMode = createContext(false);
+
+function PreviewPlaceholder({ children }: { children: ReactNode }) {
+  return <p className="preview-placeholder">{children}</p>;
+}
 
 function isExternal(href: string) {
   return /^(https?:|mailto:|tel:)/i.test(href);
@@ -33,7 +43,7 @@ function SiteLink({ href, navigate, children, className, newTab = false, ariaLab
     navigate(href);
   };
   return (
-    <a aria-label={ariaLabel} className={className} href={href} onClick={handleClick} target={newTab ? "_blank" : undefined} rel={newTab ? "noopener noreferrer" : undefined}>
+    <a aria-label={ariaLabel} className={className} href={external ? href : toBrowserPath(href)} onClick={handleClick} target={newTab ? "_blank" : undefined} rel={newTab ? "noopener noreferrer" : undefined}>
       {children}
     </a>
   );
@@ -46,7 +56,7 @@ function StageLoader({ overlay = false }: { overlay?: boolean }) {
         <span /><span /><span />
       </div>
       <span className="stage-loader__guitar-wrap" aria-hidden="true">
-        <img className="stage-loader__guitar" src="/favicon.png" alt="" />
+        <img className="stage-loader__guitar" src={assetUrl("favicon.png")} alt="" />
       </span>
       <div className="stage-loader__mark" aria-hidden="true">
         {Array.from({ length: 7 }, (_, index) => <i key={index} />)}
@@ -123,7 +133,7 @@ function Header({ data, route, navigate }: { data: LoadedSite; route: string; na
     <header className="site-header">
       <SiteLink href="/" navigate={follow} className="brand" ariaLabel="Johnny Duvert, startsida">
         <span className="brand__icon-wrap" aria-hidden="true">
-          <img className="brand__icon" src="/favicon.png" alt="" />
+          <img className="brand__icon" src={assetUrl("favicon.png")} alt="" />
         </span>
         <span className="brand__first">Johnny</span>
         <span className="brand__last">Duvert</span>
@@ -426,16 +436,18 @@ function BlockView({ block, media, feeds, navigate }: {
   feeds: Map<string, FeedData>;
   navigate: Navigate;
 }) {
+  const preview = useContext(PreviewMode);
   if (block.type === "rich_text") return <section className="content-panel"><RichText document={block.data.content} navigate={navigate} /></section>;
   if (block.type === "image") {
     const image = media.get(block.data.mediaId);
-    return image ? <div className="image-block"><LightboxImage media={image} caption={block.data.caption} /></div> : null;
+    if (image) return <div className="image-block"><LightboxImage media={image} caption={block.data.caption} /></div>;
+    return preview ? <PreviewPlaceholder>{block.data.mediaId ? "Bilden är inte publik eller finns inte" : "Ingen bild vald"}</PreviewPlaceholder> : null;
   }
   if (block.type === "image_text") {
     const image = media.get(block.data.mediaId);
     return (
       <section className={`image-text image-text--${block.data.imagePosition}`}>
-        {image && <LightboxImage media={image} caption={image.caption_sv || image.title_sv || ""} />}
+        {image ? <LightboxImage media={image} caption={image.caption_sv || image.title_sv || ""} /> : preview && <PreviewPlaceholder>Ingen bild vald</PreviewPlaceholder>}
         <div><p className="eyebrow">Johnny Duvert</p><h2>{block.data.heading}</h2><RichText document={block.data.text} navigate={navigate} /></div>
       </section>
     );
@@ -445,6 +457,7 @@ function BlockView({ block, media, feeds, navigate }: {
   if (block.type === "content_feed") return <Feed feed={feeds.get(block.id)} media={media} navigate={navigate} />;
   if (block.type === "embed") {
     const embed = embedUrl(block.data.url);
+    if (!embed && !/^https:\/\//i.test(block.data.url)) return preview ? <PreviewPlaceholder>Inbäddning saknar giltig adress</PreviewPlaceholder> : null;
     return embed ? <div className="embed"><iframe src={embed} title={block.data.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> : <p className="embed-fallback"><a href={block.data.url} target="_blank" rel="noopener noreferrer">{block.data.title} ↗</a></p>;
   }
   return null;
@@ -487,7 +500,7 @@ function Blocks({ blocks, media, feeds, navigate }: {
 function Footer({ data }: { data: LoadedSite }) {
   return (
     <footer className="site-footer">
-      <div><span className="footer-mark" aria-hidden="true"><img src="/favicon.png" alt="" /></span><p>Musik, nostalgi och full energi<br />— direkt från scenen.</p></div>
+      <div><span className="footer-mark" aria-hidden="true"><img src={assetUrl("favicon.png")} alt="" /></span><p>Musik, nostalgi och full energi<br />— direkt från scenen.</p></div>
       <div><p className="footer-label">Kontakt</p>{data.translation.contact_email && <a href={`mailto:${data.translation.contact_email}`}>{data.translation.contact_email}</a>}</div>
       <small>© {new Date().getFullYear()} {data.translation.organization || data.translation.title}</small>
     </footer>
@@ -503,16 +516,22 @@ function updateMeta(data: LoadedSite) {
   };
   set('meta[name="description"]', "content", description);
   const social = data.page.social_image ? data.media.get(data.page.social_image) : data.site.social_image ? data.media.get(data.site.social_image) : undefined;
-  set('meta[property="og:image"]', "content", social ? mediaUrl(social, "1600x0") : `${window.location.origin}/og.png`);
-  set('meta[name="twitter:image"]', "content", social ? mediaUrl(social, "1600x0") : `${window.location.origin}/og.png`);
+  const fallbackImage = new URL(assetUrl("og.png"), window.location.origin).href;
+  set('meta[property="og:image"]', "content", social ? mediaUrl(social, "1600x0") : fallbackImage);
+  set('meta[name="twitter:image"]', "content", social ? mediaUrl(social, "1600x0") : fallbackImage);
 }
 
-export default function App() {
-  const [route, setRoute] = useState(() => window.location.pathname || "/");
-  const [data, setData] = useState<LoadedSite | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<"not-found" | "unavailable" | null>(null);
-  const [reloadToken, setReloadToken] = useState(0);
+function forcePreviewRobots() {
+  let robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+  if (!robots) {
+    robots = document.createElement("meta");
+    robots.name = "robots";
+    document.head.append(robots);
+  }
+  robots.content = "noindex,nofollow";
+}
+
+function useContactFallback() {
   const [contactEmail, setContactEmail] = useState("");
   const [copyStatus, setCopyStatus] = useState<CopyStatus>("idle");
 
@@ -556,31 +575,67 @@ export default function App() {
     }
   }, []);
 
+  return { contactEmail, copyStatus, closeContact, copyContactEmail, handleMailto };
+}
+
+function SiteView({ data, route, navigate, loading = false }: { data: LoadedSite; route: string; navigate: Navigate; loading?: boolean }) {
+  const preview = useContext(PreviewMode);
+  const { contactEmail, copyStatus, closeContact, copyContactEmail, handleMailto } = useContactFallback();
+  const isHeroPage = data.page.blocks.items[0]?.type === "hero";
+  return (
+    <div className="site-shell" onClickCapture={handleMailto}>
+      <a href="#main" className="skip-link">Hoppa till innehållet</a>
+      <Header data={data} route={route} navigate={navigate} />
+      <main id="main">
+        {!isHeroPage && (
+          <header className="page-intro">
+            <p className="eyebrow">Johnny Duvert</p>
+            <h1>{data.page.title || (preview ? "Namnlös sida" : "")}</h1>
+            {data.page.summary && <p>{data.page.summary}</p>}
+          </header>
+        )}
+        <Blocks blocks={data.page.blocks.items} media={data.media} feeds={data.feeds} navigate={navigate} />
+      </main>
+      <Footer data={data} />
+      <ContactFallback email={contactEmail} copyStatus={copyStatus} onCopy={copyContactEmail} onClose={closeContact} />
+      {loading && <StageLoader overlay />}
+    </div>
+  );
+}
+
+function PublicApp() {
+  const [route, setRoute] = useState(() => toSitePath(window.location.pathname));
+  const [data, setData] = useState<LoadedSite | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<"not-found" | "unavailable" | null>(null);
+  const [reloadToken, setReloadToken] = useState(0);
+
   const navigate = useCallback<Navigate>((href, replace = false) => {
     if (isExternal(href)) {
       window.location.assign(href);
       return;
     }
     const target = new URL(href, window.location.origin);
-    if (target.hash && target.pathname === window.location.pathname) {
+    const current = toSitePath(window.location.pathname);
+    if (target.hash && target.pathname === current) {
       document.querySelector(target.hash)?.scrollIntoView({ behavior: "smooth" });
       return;
     }
-    if (target.pathname === window.location.pathname && target.search === window.location.search) {
+    if (target.pathname === current && target.search === window.location.search) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     setLoading(true);
     setError(null);
-    window.history[replace ? "replaceState" : "pushState"]({}, "", `${target.pathname}${target.search}${target.hash}`);
-    setRoute(target.pathname);
+    window.history[replace ? "replaceState" : "pushState"]({}, "", `${toBrowserPath(target.pathname)}${target.search}${target.hash}`);
+    setRoute(toSitePath(target.pathname));
   }, []);
 
   useEffect(() => {
     const onPopState = () => {
       setLoading(true);
       setError(null);
-      setRoute(window.location.pathname || "/");
+      setRoute(toSitePath(window.location.pathname));
     };
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
@@ -607,7 +662,6 @@ export default function App() {
     return () => { active = false; };
   }, [navigate, route, reloadToken]);
 
-  const currentRoute = useMemo(() => route.replace(/\/$/, "") || "/", [route]);
   if (!data && loading) return <StageLoader />;
   if (error) return (
     <main className="error-page">
@@ -618,25 +672,124 @@ export default function App() {
     </main>
   );
   if (!data) return null;
+  return <SiteView data={data} route={route} navigate={navigate} loading={loading} />;
+}
 
-  const isHeroPage = data.page.blocks.items[0]?.type === "hero";
+const endMessages: Record<Extract<PreviewStatus, { kind: "ended" }>["reason"], { title: string; text: string }> = {
+  expired: { title: "Förhandsvisningen har gått ut", text: "Länken var giltig i en timme. Öppna en ny förhandsvisning från CMS:et." },
+  unavailable: { title: "Länken fungerar inte längre", text: "Förhandsvisningen är avslutad, ogiltig eller saknar behörighet. Öppna en ny från CMS:et." },
+  mismatch: { title: "Fel adress för förhandsvisningen", text: "Länken hör inte till den här webbplatsen eller adressen. Öppna förhandsvisningen igen från CMS:et." },
+  "site-unavailable": { title: "Webbplatsen är inte aktiv", text: "Förhandsvisningen kan inte visas eftersom webbplatsen inte hittades i CMS:et." },
+};
+
+function PreviewBar({ status, expiresAt }: { status: PreviewStatus; expiresAt: string | null }) {
+  const label = status.kind === "connected" ? "Ansluten"
+    : status.kind === "disconnected" ? "Frånkopplad — försöker igen"
+    : status.kind === "connecting" ? "Ansluter…"
+    : "Avslutad";
+  const expiry = expiresAt
+    ? new Intl.DateTimeFormat("sv-SE", { hour: "2-digit", minute: "2-digit" }).format(new Date(expiresAt))
+    : null;
   return (
-    <div className="site-shell" onClickCapture={handleMailto}>
-      <a href="#main" className="skip-link">Hoppa till innehållet</a>
-      <Header data={data} route={currentRoute} navigate={navigate} />
-      <main id="main">
-        {!isHeroPage && (
-          <header className="page-intro">
-            <p className="eyebrow">Johnny Duvert</p>
-            <h1>{data.page.title}</h1>
-            {data.page.summary && <p>{data.page.summary}</p>}
-          </header>
-        )}
-        <Blocks blocks={data.page.blocks.items} media={data.media} feeds={data.feeds} navigate={navigate} />
-      </main>
-      <Footer data={data} />
-      <ContactFallback email={contactEmail} copyStatus={copyStatus} onCopy={copyContactEmail} onClose={closeContact} />
-      {loading && <StageLoader overlay />}
-    </div>
+    <aside className={`preview-bar preview-bar--${status.kind}`} aria-label="Förhandsvisning">
+      <strong>Förhandsvisning</strong>
+      {expiry && <span>Giltig till {expiry}</span>}
+      <span className="preview-bar__status" role="status" aria-live="polite"><i aria-hidden="true" />{label}</span>
+    </aside>
   );
+}
+
+function PreviewApp({ token }: { token: string }) {
+  const [targetRoute] = useState(() => toSitePath(window.location.pathname));
+  const [data, setData] = useState<LoadedSite | null>(null);
+  const [status, setStatus] = useState<PreviewStatus>({ kind: "connecting" });
+  const [expiresAt, setExpiresAt] = useState<string | null>(null);
+  const stopRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => {
+    let generation = 0;
+    let retry: ReturnType<typeof setTimeout> | undefined;
+    let context: { locale: string; value: PreviewContext } | null = null;
+
+    const clear = () => {
+      generation += 1;
+      clearTimeout(retry);
+      context = null;
+      setData(null);
+      setExpiresAt(null);
+    };
+
+    const stop = startPreview(token, {
+      onSnapshot(snapshot, site) {
+        const current = ++generation;
+        clearTimeout(retry);
+        setExpiresAt(snapshot.expiresAt);
+        if (context?.locale !== snapshot.locale) context = { locale: snapshot.locale, value: createPreviewContext(site, snapshot.locale) };
+        const build = (ctx: PreviewContext) => ctx.build(snapshot).then((result) => {
+          // Never paint a superseded or expired snapshot.
+          if (current !== generation || Date.now() >= Date.parse(snapshot.expiresAt)) return;
+          document.documentElement.lang = snapshot.locale;
+          setData(result);
+          updateMeta(result);
+          forcePreviewRobots();
+        }).catch(() => {
+          if (current !== generation) return;
+          setStatus({ kind: "disconnected" });
+          retry = setTimeout(() => { if (current === generation && context) void build(context.value); }, 1000);
+        });
+        void build(context.value);
+      },
+      onClear: clear,
+      onStatus: setStatus,
+    });
+    stopRef.current = () => { stop(); clear(); };
+
+    // Stop polling and drop the token if the address leaves the target route.
+    const onPopState = () => { if (!isPreviewTarget(targetRoute)) stopRef.current?.(); };
+    window.addEventListener("popstate", onPopState);
+    return () => {
+      window.removeEventListener("popstate", onPopState);
+      stop();
+      generation += 1;
+      clearTimeout(retry);
+    };
+  }, [token, targetRoute]);
+
+  // Following any link that leaves the preview target discards the session and
+  // loads the normal published page (without the token in the URL).
+  const navigate = useCallback<Navigate>((href) => {
+    if (isExternal(href)) {
+      window.location.assign(href);
+      return;
+    }
+    const target = new URL(href, window.location.origin);
+    if (target.hash && target.pathname === targetRoute && !target.search) {
+      document.querySelector(target.hash)?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    stopRef.current?.();
+    window.location.assign(`${toBrowserPath(target.pathname)}${target.search}${target.hash}`);
+  }, [targetRoute]);
+
+  const ended = status.kind === "ended" ? endMessages[status.reason] : null;
+  return (
+    <PreviewMode.Provider value={true}>
+      <PreviewBar status={status} expiresAt={expiresAt} />
+      <div id="page-content" style={data ? { visibility: "visible" } : undefined}>
+        {data && <SiteView data={data} route={targetRoute} navigate={navigate} />}
+      </div>
+      {ended && (
+        <main className="error-page">
+          <p className="eyebrow">Förhandsvisning</p>
+          <h1>{ended.title}</h1>
+          <p>{ended.text}</p>
+        </main>
+      )}
+      {!data && !ended && <StageLoader />}
+    </PreviewMode.Provider>
+  );
+}
+
+export default function App({ previewToken }: { previewToken: string | null }) {
+  return previewToken !== null ? <PreviewApp token={previewToken} /> : <PublicApp />;
 }
