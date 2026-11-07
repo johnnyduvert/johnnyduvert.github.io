@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/favicon-outlined.png" />
+    <title>Johnny Duvert</title>
+  </head>
+  <body>
+    <script>
+      var route = location.pathname + location.search + location.hash;
+      location.replace("/?__route=" + encodeURIComponent(route));
+    </script>
+  </body>
+</html>
