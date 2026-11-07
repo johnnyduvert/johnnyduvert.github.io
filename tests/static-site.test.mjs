@@ -19,7 +19,10 @@ test("uses a framework-neutral static GitHub Pages build", async () => {
     assert.equal(manifest.dependencies?.[forbidden], undefined);
     assert.equal(manifest.devDependencies?.[forbidden], undefined);
   }
-  assert.match(workflow, /actions\/deploy-pages/);
+  assert.match(workflow, /branches: \[main\]/);
+  assert.match(workflow, /\.nojekyll/);
+  assert.match(workflow, /git push -q origin master/);
+  assert.doesNotMatch(workflow, /--force/);
   assert.match(workflow, /VITE_CMS_URL/);
   assert.equal(cname.trim(), "www.johnnyduvert.se");
 });
