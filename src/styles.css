@@ -479,3 +479,15 @@ h1, h2, h3, p { margin-top: 0; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* CMS preview indicator (kept outside #page-content so it stays visible). */
+.preview-bar { position: fixed; right: 1rem; bottom: 1rem; z-index: 300; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; align-items: center; max-width: calc(100vw - 2rem); padding: 0.6rem 1rem; border: 1px solid var(--amber); border-radius: 0.4rem; background: rgba(13,10,11,0.94); color: var(--paper); box-shadow: 0 0.6rem 2rem rgba(0,0,0,0.45); font-size: 0.85rem; line-height: 1.3; }
+.preview-bar strong { color: var(--amber); font-family: var(--display); font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.preview-bar__status { display: inline-flex; gap: 0.45rem; align-items: center; }
+.preview-bar__status i { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--paper-muted); }
+.preview-bar--connected .preview-bar__status i { background: #4cc46b; }
+.preview-bar--disconnected { border-color: var(--red); }
+.preview-bar--disconnected .preview-bar__status i { background: var(--red); }
+.preview-bar--ended { border-color: var(--red); }
+.preview-placeholder { margin: 1rem 0; padding: 2.5rem 1rem; border: 1px dashed var(--amber); color: var(--paper-muted); text-align: center; }
+@media (max-width: 640px) { .preview-bar { right: 0.5rem; bottom: 0.5rem; left: 0.5rem; max-width: none; } }

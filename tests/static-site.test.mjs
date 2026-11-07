@@ -28,14 +28,36 @@ test("uses a framework-neutral static GitHub Pages build", async () => {
 });
 
 test("restores arbitrary GitHub Pages paths before the app starts", async () => {
-  const [fallback, entry] = await Promise.all([
-    read("public/404.html"),
-    read("src/main.tsx"),
-  ]);
+  const [config, entry] = await Promise.all([read("vite.config.ts"), read("src/main.tsx")]);
 
-  assert.match(fallback, /location\.pathname \+ location\.search \+ location\.hash/);
-  assert.match(fallback, /__route/);
+  // 404.html is generated from the built index.html (see vite.config.ts).
+  assert.match(config, /fileName: "404\.html"/);
+  assert.match(config, /location\.pathname \+ location\.search \+ location\.hash/);
+  assert.match(config, /__route/);
+  assert.match(config, /searchParams\.has\('preview'\)/);
   assert.match(entry, /history\.replaceState/);
+});
+
+test("bootstraps CMS previews before styles and app scripts", async () => {
+  const html = await read("index.html");
+  const bootstrap = html.indexOf("searchParams.has('preview')");
+  assert.ok(html.indexOf('<meta name="referrer" content="no-referrer"') > -1);
+  assert.match(html, /html\[data-cms-preview\] #page-content \{ visibility: hidden; \}/);
+  assert.match(html, /noindex,nofollow/);
+  assert.ok(bootstrap > -1 && bootstrap < html.indexOf("<link"), "bootstrap precedes asset requests");
+  assert.ok(bootstrap < html.indexOf('type="module"'), "bootstrap precedes the app script");
+});
+
+test("reads previews through the header with no caching or persistence", async () => {
+  const [preview, app] = await Promise.all([read("src/preview.ts"), read("src/App.tsx")]);
+
+  assert.match(preview, /"X-CMS-Preview": currentToken/);
+  assert.match(preview, /cache: "no-store"/);
+  assert.match(preview, /credentials: "omit"/);
+  assert.match(preview, /status === 404 \|\| response\.status === 410/);
+  assert.doesNotMatch(preview, /searchParams\.set\("(?:preview|token)"/);
+  assert.doesNotMatch(preview + app, /localStorage|sessionStorage|indexedDB|caches\./);
+  assert.match(app, /id="page-content"/);
 });
 
 test("resolves content routes and feeds from the CMS", async () => {

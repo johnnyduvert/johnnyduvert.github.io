@@ -93,6 +93,93 @@ export function parseBlockDocument(value: unknown): BlockDocument {
   };
 }
 
+// Preview snapshots carry unfinished authoring values: media references and
+// embed URLs may be empty. Mirrors `previewBlockSchema` in @oortis/cms-contracts.
+const [heroSchema, richTextBlockSchema, imageSchema, imageTextSchema, ctaSchema, quoteSchema, feedSchema, embedSchema] = contentBlockSchema.options;
+const previewBlockSchema = z.discriminatedUnion("type", [
+  heroSchema.extend({ data: heroSchema.shape.data.extend({ mediaId: z.string().max(15).default("") }) }),
+  richTextBlockSchema,
+  imageSchema.extend({ data: imageSchema.shape.data.extend({ mediaId: z.string().max(15) }) }),
+  imageTextSchema.extend({ data: imageTextSchema.shape.data.extend({ mediaId: z.string().max(15) }) }),
+  ctaSchema,
+  quoteSchema,
+  feedSchema,
+  embedSchema.extend({ data: embedSchema.shape.data.extend({ url: z.string().max(2048) }) }),
+]);
+
+export function parsePreviewBlockDocument(value: unknown): BlockDocument {
+  if (!value || typeof value !== "object" || (value as { version?: unknown }).version !== 1) {
+    return { version: 1, items: [] };
+  }
+  const items = Array.isArray((value as { items?: unknown }).items) ? (value as { items: unknown[] }).items : [];
+  return {
+    version: 1,
+    items: items.flatMap((item) => {
+      const result = previewBlockSchema.safeParse(item);
+      return result.success ? [result.data as ContentBlock] : [];
+    }),
+  };
+}
+
+export type CmsLocale = "en" | "sv";
+
+/** `PagePreviewSnapshot` from @oortis/cms-contracts (schemaVersion 1). */
+export interface PagePreviewSnapshot {
+  schemaVersion: 1;
+  siteId: string;
+  pageId: string;
+  locale: CmsLocale;
+  targetPath: string;
+  expiresAt: string;
+  revision: number;
+  page: { id: string; site: string; template: "default" | "landing"; parent: string; sort_order: number };
+  translation: {
+    page: string;
+    site: string;
+    locale: CmsLocale;
+    path: string;
+    title: string;
+    slug: string;
+    summary: string;
+    blocks: unknown;
+    seo_title: string;
+    seo_description: string;
+    canonical_url: string;
+    social_image: string;
+    no_index: boolean;
+    status: "draft" | "published" | "archived";
+    publish_at: string;
+  };
+}
+
+const previewSnapshotShape = z.object({
+  schemaVersion: z.literal(1),
+  siteId: z.string(),
+  pageId: z.string(),
+  locale: z.enum(["en", "sv"]),
+  targetPath: z.string(),
+  expiresAt: z.string(),
+  revision: z.number().int(),
+  page: z.object({ id: z.string(), site: z.string() }).passthrough(),
+  translation: z.object({
+    page: z.string(),
+    site: z.string(),
+    locale: z.enum(["en", "sv"]),
+    path: z.string(),
+    title: z.string().default(""),
+    summary: z.string().default(""),
+    seo_title: z.string().default(""),
+    seo_description: z.string().default(""),
+    social_image: z.string().default(""),
+  }).passthrough(),
+}).passthrough();
+
+/** Structural check of an untrusted preview API response. Identity checks happen separately. */
+export function parsePreviewSnapshot(value: unknown): PagePreviewSnapshot | null {
+  const result = previewSnapshotShape.safeParse(value);
+  return result.success ? (result.data as unknown as PagePreviewSnapshot) : null;
+}
+
 export interface RecordBase {
   id: string;
   collectionId: string;
